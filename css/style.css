@@ -138,7 +138,7 @@ body {
 }
 
 .img_a_articles {
-	/*object-fit: none;*/
+	object-fit: cover;
 	width: 100%;
 }
 
