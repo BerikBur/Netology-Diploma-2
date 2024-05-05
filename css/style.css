@@ -144,7 +144,7 @@
 	/*background-image: url('/Netology-Diploma-2/images/trend1.jpg');*/
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url('/images/trend1.jpg');
+	background-image: url('../images/trend1.jpg');
 }
 
 .pic_a_article {
