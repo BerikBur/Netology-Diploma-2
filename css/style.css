@@ -1,13 +1,13 @@
 @font-face {
 	font-family: OpenSans_1;
-	src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+	src: url(../images/banner-bg-tablet.jpg);
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: OpenSans_2;
-	src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+	src: url(../fonts/OpenSans-Bold.woff);
 	font-weight: normal;
 	font-style: normal;
 }
@@ -15,27 +15,38 @@
 :root {
 	--gap: 70px;
 	--outline: 18px;
+	/*--width_main: 1200px;*/
+	--width_main: 100%;
+	--width_cards: 780px;
+	/*--width_bot_article: 380px;*/
+	--width_bot_article: 100%;
 }
 
 * {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
 
-.body {
+.page {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
 	margin: 0;
-	min-width: 1660px;
 	min-height: 450px;
 	box-sizing: border-box;
 }
 
 .header {
+	min-width: var(--width_main);
+
 	padding-top: 35px;
 	padding-bottom: 130px;
 
-	background-image: url(https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg);
+	background-image: url(../images/banner-bg.jpg);
 	background-repeat: no-repeat;
-	min-width: 100%;
+
 	background-size: cover;
 	justify-content: center;
 	position: relative;
@@ -55,20 +66,23 @@
 }
 
 .container {
+	width: var(--width_main);
+
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-content: flex-start;
-	width: 1180px;
+
 	margin: 0 auto 0 auto;
 	padding-left: 14px;
 	padding-right: 14px;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .header_top {
-	display: flex;
 	width: 100%;
+
+	display: flex;
 	justify-content: space-between;
 	box-sizing: border-box;
 	align-items: center;
@@ -93,6 +107,8 @@
 }
 
 .wrp_a_articles {
+	min-width: var(--width_main);
+
 	display: flex;
 	flex-direction: column;
 }
@@ -108,7 +124,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	margin-top: 45px;
 }
 
@@ -128,9 +143,7 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 320px;
-
 	gap: 5px;
-
 	margin-top: 30px;
 }
 
@@ -175,32 +188,16 @@
 	background-image: url('../images/trend4.jpg');
 }
 
-.pic_a_article {
-	position: relative;
-}
-
-.img_a_articles {
-	object-fit: cover;
-	width: 100%;
-}
-
 .con_a_article {
+	width: calc(100% - 38px);
+
 	display: flex;
 	flex-direction: column;
-
-	width: calc(100% - 38px);
 	min-height: 146px;
-
-	margin-right: 34px;
-	margin-left: 34px;
-	margin-top: -205px;
-	margin-bottom: 0px;
-
+	padding: 30px;
 	border: 2px solid #b59f5b;
 	box-sizing: border-box;
-
 	position: relative;
-
 	z-index: 2;
 }
 
@@ -212,7 +209,6 @@
 .category_list_a_article {
 	display: flex;
 	list-style-type: none;
-	padding: 40px 30px 0 30px;
 }
 
 .category_list_a_article li:nth-child(n + 2) {
@@ -225,8 +221,10 @@
 	color: #f5f2f3;
 	font-weight: 700;
 	font-family: 'OpenSans_2';
+}
 
-	padding: 10px 30px 30px 30px;
+.title_a_article:hover {
+	color: #b59f5b;
 }
 
 .logo {
@@ -250,7 +248,6 @@
 	color: #ffffff;
 	font-weight: 400;
 	text-decoration: none;
-
 	box-sizing: border-box;
 }
 
@@ -270,6 +267,7 @@
 }
 
 .cards {
+	width: var(--width_cards);
 	display: flex;
 	align-items: flex-start;
 }
@@ -283,7 +281,9 @@
 }
 
 .news {
-	width: 780px;
+	width: var(--width_main);
+	display: flex;
+	justify-content: center;
 }
 
 .card_container {
@@ -454,7 +454,6 @@ p {
 
 .search {
 	background: #f4f7f6;
-	/*   background-position: cover; */
 	border: none;
 	display: flex;
 	margin-top: 60px;
@@ -486,7 +485,7 @@ p {
 	width: 48px;
 	height: 48px;
 	background: #b59f5b;
-	background-image: url('https://netology-code.github.io/html-2-diploma/sources/images/search.svg');
+	background-image: url('../svg/search.svg');
 	background-repeat: no-repeat;
 	background-size: 20px 20px;
 	background-position: center center;
@@ -636,19 +635,20 @@ p {
 }
 
 .container_bot_articles {
-	display: flex;
+	display: grid;
 	flex-wrap: wrap;
-	justify-content: space-between;
-
 	gap: var(--gap);
-
 	padding-top: 30px;
+
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
 }
 
 .bot_article {
 	display: flex;
 	flex-direction: column;
-	width: calc((100% - 2 * var(--gap)) / 3);
+	align-items: center;
+	width: var(--width_bot_article);
 }
 
 .pic_bot_article,
@@ -659,14 +659,12 @@ p {
 .content_bot_article {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 
 	border: 4px solid #b59f5b;
-	box-sizing: border-box;
 
 	margin-top: -32px;
-
 	padding-top: 62px;
-
 	flex-grow: 1;
 }
 
@@ -694,7 +692,6 @@ p {
 
 .price {
 	display: flex;
-
 	flex-direction: column;
 }
 
@@ -717,16 +714,16 @@ p {
 
 .subs_button_bot_articles {
 	margin-top: 0;
-
 	width: 140px;
 }
 
 .footer {
+	width: 100%;
 	padding: 30px 0;
 }
 
 .icons {
-	width: 1180px;
+	width: 100%;
 	background-color: #f4f7f6;
 	margin: 0 auto;
 }
@@ -747,7 +744,7 @@ p {
 }
 
 .icon_first {
-	background-image: url('https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg');
+	background-image: url('../svg/001-dribbble.svg');
 	width: 20px;
 	display: block;
 	height: 20px;
@@ -756,7 +753,7 @@ p {
 }
 
 .icon_second {
-	background-image: url('https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg');
+	background-image: url('../svg/002-pinterest.svg');
 	width: 20px;
 	display: block;
 	height: 20px;
@@ -765,7 +762,7 @@ p {
 }
 
 .icon_third {
-	background-image: url('https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg');
+	background-image: url('../svg/003-tumblr.svg');
 	width: 20px;
 	display: block;
 	height: 20px;
@@ -810,6 +807,164 @@ p {
 	outline: 2px solid red;
 	padding: 5px 0 5px;
 	outline-offset: 4px;
-
 	flex-grow: 1;
+}
+
+.pop_up_wrp {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	top: 0px;
+	z-index: 2;
+}
+
+._hidden {
+	display: none;
+}
+
+.pop_up {
+	position: relative;
+
+	width: 390px;
+	height: 589px;
+	background-color: #ffffff;
+
+	display: flex;
+	flex-direction: column;
+
+	padding: 54px 30px;
+	margin: 240px auto 0px auto;
+}
+
+.close_button {
+	position: absolute;
+	top: -26px;
+	right: 0;
+
+	width: 18px;
+	height: 18px;
+	background-image: url('../svg/form-x.svg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+
+	border: none;
+	cursor: pointer;
+}
+
+.pop_up_title {
+	font-size: 20px;
+	margin: 0;
+}
+
+.pop_up_label {
+	padding: 30px 0 10px;
+
+	font-size: 13px;
+	color: #000000;
+	font-weight: 400;
+	font-family: 'Open Sans';
+}
+
+.pop_up_select {
+	height: 48px;
+	padding-left: 18px;
+
+	appearance: none;
+	background-image: url('../svg/form-arrows.svg');
+	background-position: bottom 15px right 15px;
+	background-repeat: no-repeat;
+	background-size: 10px;
+}
+
+.pop_up_answer {
+	padding: 0;
+}
+
+.checkbox {
+	margin-right: 5px;
+	appearance: none;
+	height: 17px;
+	width: 17px;
+	background-image: url('../svg/form-empty-circle.svg');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
+.checkbox:checked {
+	background-image: url('../svg/form-circle.svg');
+}
+
+.radiobuttons {
+	display: flex;
+	flex-direction: row;
+}
+
+.radiobuttons input:nth-child(n + 2) {
+	margin-left: 10px;
+}
+
+.pop_up_textarea {
+	height: 130px;
+	padding: 10px;
+}
+
+@media (max-width: 1150px) {
+	.sec_a_articles {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 320px);
+	}
+
+	.aside_container {
+		margin-left: 36px;
+	}
+
+	:root {
+		--width_cards: 100%;
+		--gap: 26px;
+	}
+}
+
+@media (max-width: 1065px) {
+	.container_bot_articles {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	:root {
+		--width_cards: 392px;
+	}
+	.card_container {
+		margin-left: 0;
+	}
+	.cards {
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 700px) {
+	.news {
+		flex-wrap: wrap;
+	}
+
+	.aside_container {
+		width: 100%;
+		margin-left: 0;
+		min-width: 380px;
+	}
+	.search_button {
+		right: 15px;
+		position: absolute;
+	}
+	.search_input {
+		width: 100%;
+	}
+
+	.container_bot_articles {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.sec_a_articles {
+		grid-template-columns: repeat(1, 1fr);
+		grid-template-rows: repeat(4, 230px);
+	}
 }
