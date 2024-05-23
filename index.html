@@ -15,7 +15,10 @@
 							<a href="#">
 								<img src="svg/noemi-logo.svg" alt="Логотип" class="logo" />
 							</a>
-							<nav class="menu">
+							<nav class="menu js-menu">
+								<button class="menu_button js-menu_button" id="alignButton">
+									<span class="menu_button-label">Open menu</span>
+								</button>
 								<ul class="menu_list">
 									<li class="menu_list_pad">
 										<a href="#" class="menu_item">Главная</a>
@@ -111,8 +114,8 @@
 			</div>
 
 			<div class="container">
-				<main class="news">
-					<section class="articles">
+				<div class="news">
+					<main class="articles">
 						<article class="cards">
 							<img
 								src="images/last-post1.jpg"
@@ -138,7 +141,7 @@
 									</div>
 								</div>
 								<div class="card_content">
-									<p>
+									<p class="article_text">
 										Итак, вы в Питере. Раннее утро. Лед с рек и каналов уже
 										ушел, запущены фонтаны города… Музеи еще закрыты. Что
 										посмотреть?
@@ -171,7 +174,7 @@
 									</div>
 								</div>
 								<div class="card_content">
-									<p>
+									<p class="article_text">
 										Расскажем, какие упражнения выбрать и как сделать коврик для
 										занятий йогой из того, что можно найти в шкафу.
 									</p>
@@ -202,7 +205,7 @@
 									</div>
 								</div>
 								<div class="card_content">
-									<p>
+									<p class="article_text">
 										Лето на носу, а с ним и музыкальные фестивали. На каком же
 										из них вы разобьёте свою палатку? Мы составили список лучших
 										летних фестивалей по всему миру.
@@ -233,7 +236,7 @@
 									</div>
 								</div>
 								<div class="card_content">
-									<p>
+									<p class="article_text">
 										Узнаем основы проектирования новых пищевых и около-пищевых
 										опытов, вскроем физику, химию и микробиологию еды.
 									</p>
@@ -265,7 +268,7 @@
 									</div>
 								</div>
 								<div class="card_content">
-									<p>
+									<p class="article_text">
 										Подушки для дивана целесообразнее заказать в съемных чехлах
 										на молнии, если потребуется чистка подушек, проще снять
 										чехлы, чем везти подушку в химчистку.
@@ -298,7 +301,7 @@
 									</div>
 								</div>
 								<div class="card_content">
-									<p>
+									<p class="article_text">
 										Для начала нужно определиться, в каком формате пройдет ваше
 										путешествие. Это зависит от многих факторов, не только от
 										ваших желаний и интересов.
@@ -306,7 +309,7 @@
 								</div>
 							</div>
 						</article>
-					</section>
+					</main>
 
 					<aside class="aside_container">
 						<h2 class="aside_title">Новые посты</h2>
@@ -465,7 +468,7 @@
 							</div>
 						</nav>
 					</aside>
-				</main>
+				</div>
 
 				<div class="wrp_bot_articles">
 					<a href="#" class="card_name_link">
@@ -495,7 +498,7 @@
 									<h2 class="card_name">подушки на диван</h2>
 								</a>
 								<div class="card_content card_content_bot_article">
-									<p>
+									<p class="article_text">
 										Набор из двух подушек с модными принтами. Видео о создании
 										<a href="#" class="link_bot_article">здесь</a>.
 									</p>
@@ -535,7 +538,7 @@
 									<h2 class="card_name">Кукла «Зайчик»</h2>
 								</a>
 								<div class="card_content card_content_bot_article">
-									<p>
+									<p class="article_text">
 										Интерьерная рукодельная кукла «Зайчик», созданию которой
 										посвящена
 										<a href="#" class="link_bot_article"
@@ -579,7 +582,7 @@
 									<h2 class="card_name">Шестиугольная рамка</h2>
 								</a>
 								<div class="card_content card_content_bot_article">
-									<p>
+									<p class="article_text">
 										Необычная рамка для украшения дома из видео
 										<a href="#" class="link_bot_article"
 											>«Как сделать рамку из подручных средств за 30 минут»</a
@@ -599,40 +602,45 @@
 						</article>
 					</div>
 				</div>
+				<footer class="footer">
+					<div class="icons">
+						<ul class="list_icons">
+							<li class="item_icons">
+								<a class="icon_first" href="#">
+									<span class="visually_hidden"
+										>Профиль компании в dribble
+									</span>
+								</a>
+							</li>
+							<li class="item_icons">
+								<a class="icon_second" href="#">
+									<span class="visually_hidden"
+										>Профиль компании в pinterest
+									</span>
+								</a>
+							</li>
+							<li class="item_icons">
+								<a class="icon_third" href="#">
+									<span class="visually_hidden"
+										>Профиль компании в tumblr
+									</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="copyright">
+						<a class="copyright_text" href="#"
+							>Copyright © 2009–2019 City Blog LLC.</a
+						>
+					</div>
+				</footer>
 			</div>
-
-			<footer class="footer">
-				<div class="icons">
-					<ul class="list_icons">
-						<li class="item_icons">
-							<a class="icon_first" href="#">
-								<span class="visually_hidden">Профиль компании в dribble</span>
-							</a>
-						</li>
-						<li class="item_icons">
-							<a class="icon_second" href="#">
-								<span class="visually_hidden"
-									>Профиль компании в pinterest</span
-								>
-							</a>
-						</li>
-						<li class="item_icons">
-							<a class="icon_third" href="#">
-								<span class="visually_hidden">Профиль компании в tumblr</span>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<div class="copyright">
-					<a class="copyright_text" href="#"
-						>Copyright © 2009–2019 City Blog LLC.</a
-					>
-				</div>
-			</footer>
 
 			<div class="pop_up_wrp _hidden">
 				<form action="" class="pop_up">
-					<button class="close_button"></button>
+					<button class="close_button">
+						<span class="visually_hidden"> Закрыть меню </span>
+					</button>
 					<h3 class="a_articles_title pop_up_title">Ваш фидбек</h3>
 					<label for="answer" class="pop_up_label"
 						>Как часто вы заходите на сайт?
@@ -680,5 +688,6 @@
 				</form>
 			</div>
 		</div>
+		<script src="scripts/script.js"></script>
 	</body>
 </html>
